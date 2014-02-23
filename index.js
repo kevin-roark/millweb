@@ -18,7 +18,7 @@ function makeProject() {
   fs.mkdirSync(pdir);
 
   ncp.limit = 16;
-  ncp('boiler', pdir, function(err) {
+  ncp(__dirname + '/boiler', pdir, function(err) {
     if (err) {
       return console.error(err);
     }

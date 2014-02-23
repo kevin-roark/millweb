@@ -1,6 +1,6 @@
 {
   "name": "millweb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Its like HTML5 Boilerplate but without all the weird boilerplate",
   "main": "index.js",
   "scripts": {
