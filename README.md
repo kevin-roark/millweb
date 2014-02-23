@@ -12,7 +12,7 @@ Feasibly I should put them in the dependencies but I figure most people
 have 'em globally and wanna keep size down.
 
 To use:
-  millweb <name_of_project>
+  node millweb <name_of_project>
 
 Then a directory called <name_of_project> will magically appear! It will have
 useful stuff in it!
