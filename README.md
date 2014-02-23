@@ -15,7 +15,7 @@ How I start a project:
   make it on github
   clone it
   go to the new directory
-  node millweb
+  millweb
 
 Then the project directory will have a bunch of useful stuff in it!
 
