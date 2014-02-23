@@ -18,7 +18,5 @@ function makeProject() {
 
 }
 
-if (!module.parent) { /* being run as command line */
-  makeProject();
-}
+makeProject();
 
