@@ -6,19 +6,10 @@ var fs = require('fs');
 var ncp = require('ncp').ncp;
 
 function makeProject() {
-  var args = process.argv.slice(2);
-  if (!args.length) {
-    console.log('usage: millweb <project_name>');
-    return;
-  }
   console.log('initializing ur project');
 
-  var project_name = args[0];
-  var pdir = './' + project_name;
-  fs.mkdirSync(pdir);
-
   ncp.limit = 16;
-  ncp(__dirname + '/boiler', pdir, function(err) {
+  ncp(__dirname + '/boiler', './', function(err) {
     if (err) {
       return console.error(err);
     }
