@@ -1,0 +1,29 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: Helvetica, sans-serif;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+.footer {
+  width: 100%;
+  padding: 1em 0em;
+  background-color: rgba(225, 225, 225, 1);
+  color: #333;
+  text-align: center;
+  font-size: 100%;
+}
+   .footer a {
+        color: rgba(60, 60, 240, 0.9);
+        text-decoration: none;
+    }
+         .footer  a:hover, footer a:focus {
+            color: rgba(90, 95, 255, 1.0);
+        }
+
+/* add all ur other cool stuff here !! */
+
