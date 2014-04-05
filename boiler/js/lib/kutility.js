@@ -29,6 +29,13 @@ Kutility.prototype.randColor = function() {
     return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
+Kutility.prototype.randInt = function(max, min) {
+  if (min)
+    return Math.floor(Math.random() * (max - min)) + min;
+  else
+    return Math.floor(Math.random() * (max));
+}
+
 /**
  * Color wheel 1 -> 1536.
  *
@@ -156,7 +163,7 @@ Kutility.prototype.clearTransforms = function(el) {
  */
 Kutility.prototype.rotate = function(el, x) {
   var ct = this.getTransform(el);
-  ct = ct.replace(/matrix\(.*\)/, '').replace('none', '');
+  ct = ct.replace(/matrix\(.*?\)/, '').replace('none', '');
 
   var t = ' rotate(' + x + 'deg)';
   this.setTransform(el, ct  + t);
@@ -169,7 +176,7 @@ Kutility.prototype.rotate = function(el, x) {
  */
 Kutility.prototype.scale = function(el, x) {
   var ct = this.getTransform(el);
-  ct = ct.replace(/scale\(.*\)/, '').replace('none', '');
+  ct = ct.replace(/scale\(.*?\)/, '').replace('none', '');
 
   var t = ' scale(' + x + ')';
   this.setTransform(el, ct + t);
@@ -182,7 +189,7 @@ Kutility.prototype.scale = function(el, x) {
  */
 Kutility.prototype.translate = function(el, x, y) {
   var ct = this.getTransform(el);
-  ct = ct.replace(/translate\(.*\)/, '').replace('none', '');
+  ct = ct.replace(/translate\(.*?\)/, '').replace('none', '');
 
   var t = ' translate(' + x + ', '  + y + ')';
   this.setTransform(el, ct + t);
@@ -195,7 +202,7 @@ Kutility.prototype.translate = function(el, x, y) {
  */
 Kutility.prototype.skew = function(el, x, y) {
   var ct = this.getTransform(el);
-  ct = ct.replace(/skew\(.*\)/, '').replace('none', '');
+  ct = ct.replace(/skew\(.*?\)/, '').replace('none', '');
 
   var xd = x + 'deg';
   var yd = y + 'deg';
@@ -283,7 +290,7 @@ Kutility.prototype.clearFilters = function(el) {
  */
 Kutility.prototype.grayscale = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/grayscale\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/grayscale\(.*?\)/, '').replace('none', '');
 
   var f = ' grayscale(' + x + '%)';
   this.setFilter(el, cf  + f);
@@ -296,7 +303,7 @@ Kutility.prototype.grayscale = function(el, x) {
  */
 Kutility.prototype.sepia = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/sepia\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/sepia\(.*?\)/, '').replace('none', '');
 
   var f = ' sepia(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -309,7 +316,7 @@ Kutility.prototype.sepia = function(el, x) {
  */
 Kutility.prototype.saturate = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/saturate\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/saturate\(.*?\)/, '').replace('none', '');
 
   var f = ' saturate(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -322,7 +329,7 @@ Kutility.prototype.saturate = function(el, x) {
  */
 Kutility.prototype.invert = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/invert\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/invert\(.*?\)/, '').replace('none', '');
 
   var f = ' invert(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -335,7 +342,7 @@ Kutility.prototype.invert = function(el, x) {
  */
 Kutility.prototype.hutate = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/hue-rotate\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/hue-rotate\(.*?\)/, '').replace('none', '');
 
   var f = ' hue-rotate(' + x + 'deg)';
   this.setFilter(el, cf + f);
@@ -348,7 +355,7 @@ Kutility.prototype.hutate = function(el, x) {
  */
 Kutility.prototype.opace = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/opacity\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/opacity\(.*?\)/, '').replace('none', '');
 
   var f = ' opacity(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -361,7 +368,7 @@ Kutility.prototype.opace = function(el, x) {
  */
 Kutility.prototype.brightness = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/brightness\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/brightness\(.*?\)/, '').replace('none', '');
 
   var f = ' brightness(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -374,7 +381,7 @@ Kutility.prototype.brightness = function(el, x) {
  */
 Kutility.prototype.contrast = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/contrast\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/contrast\(.*?\)/, '').replace('none', '');
 
   var f = ' contrast(' + x + '%)';
   this.setFilter(el, cf + f);
@@ -387,7 +394,7 @@ Kutility.prototype.contrast = function(el, x) {
  */
 Kutility.prototype.blur = function(el, x) {
   var cf = this.getFilter(el);
-  cf = cf.replace(/blur\(.*\)/, '').replace('none', '');
+  cf = cf.replace(/blur\(.*?\)/, '').replace('none', '');
 
   var f = ' blur(' + x + 'px)';
   this.setFilter(el, cf + f);
